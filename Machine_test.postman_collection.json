@@ -1,0 +1,355 @@
+{
+	"info": {
+		"_postman_id": "3fc3b221-4da8-4436-97d0-2ee89e0be082",
+		"name": "Machine_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26877687",
+		"_collection_link": "https://speeding-shuttle-65419.postman.co/workspace/My-Workspace~29039d53-1beb-4336-8b35-828586a96932/collection/26877687-3fc3b221-4da8-4436-97d0-2ee89e0be082?action=share&source=collection_link&creator=26877687"
+	},
+	"item": [
+		{
+			"name": "Create-client",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token  8aa7bc123158d623dfac812031679636bfcd5176",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client_name\": \"nimap client2\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/client/create/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"client",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-clients",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 3e75e6b56b04bcf794db9f31e5c7caec5c0ce12f",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/clients/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"clients",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth-Token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1f41f03f4fcd7f3d39ab776dca60e22578432dad",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//     \"username\": \"manoj\",\r\n//     \"password\": \"karekar2002\"\r\n// }\r\n\r\n\r\n// {\r\n//     \"username\": \"rohit\",\r\n//     \"password\": \"kumar@2002\"\r\n// }\r\n\r\n{\r\n    \"username\": \"rohan\",\r\n    \"password\": \"das@2002\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/api-token-auth/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"api-token-auth",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get client with id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 0a8bab7e203f9ea3268664c7d3b698e8fe0f3109",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client_name\": \"Company A\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/client/4/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"client",
+						"4",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update client",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 0a8bab7e203f9ea3268664c7d3b698e8fe0f3109",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n        \"client_name\": \"client updated\",\r\n        \"created_by\": \"admin\",\r\n        \"created_at\": \"2024-10-19T10:10:00.239319Z\",\r\n        \"updated_at\": \"2024-10-19\",\r\n        \"projects\": []\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/client/3/update/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"client",
+						"3",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete client",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 0a8bab7e203f9ea3268664c7d3b698e8fe0f3109",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/client/5/delete/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"client",
+						"5",
+						"delete",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new project",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 31efd5e7ba7b5f58a72262c9a1fd60a9dd3a6567",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"project_name\": \"todo application\",\r\n  \"client\": 9,  \r\n  \"users\": [2,3,1]  \r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/project/create/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"project",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign logged user projects",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 8aa7bc123158d623dfac812031679636bfcd5176",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/projects/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"projects",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
